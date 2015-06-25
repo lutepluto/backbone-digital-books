@@ -37,8 +37,8 @@
     <ul>
         <li><%= title %></li>
         <li><%= author %></li>
-        <li><%= releaseDate %></li>
-        <li><%= keywords %></li>
+        <li><%= $.format.date( new Date( releaseDate ), 'MMMM yyyy' ) %></li>
+        <li><% _.each( keywords, function( keyobj ) {%> <%= keyobj.keyword %><% } ); %></li>
     </ul>
     <button class="delete">Delete</button>
   </script>
@@ -47,6 +47,8 @@
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/lodash/dist/lodash.compat.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
+
+  <script src="bower_components/jquery-dateFormat/dist/jquery-dateFormat.min.js"></script>
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/main.js -->

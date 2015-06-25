@@ -6,7 +6,12 @@ app.Book = Backbone.Model.extend({
     coverImage: 'images/placeholder.png',
     title: 'No title',
     author: 'Unknown',
-    releaseDate: 'Unknown',
+    releaseDate: new Date().getTime(),
     keywords: 'None'
+  },
+
+  parse: function(response) {
+    response.id = response._id
+    return response
   }
 })
